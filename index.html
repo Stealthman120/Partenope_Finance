@@ -70,6 +70,12 @@
     };
     const mBlob = new Blob([JSON.stringify(manifest)], {type:'application/manifest+json'});
     document.getElementById('pwa-manifest').href = URL.createObjectURL(mBlob);
+
+    // Apple Touch Icon for iOS PWA Home Screen
+    const appleLink = document.createElement('link');
+    appleLink.rel = 'apple-touch-icon';
+    appleLink.href = _PWA_ICON_URI;
+    document.head.appendChild(appleLink);
   });
 
   /* ── Service Worker ── */
